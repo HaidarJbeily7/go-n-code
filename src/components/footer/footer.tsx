@@ -59,10 +59,18 @@ export default function Footer() {
                 infoname@mail.com
               </Box>
               <Flex gap={2}>
-                <img src="/footer/facebook.svg" />
-                <img src="/footer/linkedin.svg" />
-                <img src="/footer/instagram.svg" />
-                <img src="/footer/whatsapp.svg" />
+                <Box as="a" href="https://www.facebook.com/" target="_blank">
+                  <img src="/footer/facebook.svg" />
+                </Box>
+                <Box as="a" href="https://www.linkedin.com/" target="_blank">
+                  <img src="/footer/linkedin.svg" />
+                </Box>
+                <Box as="a" href="https://www.instagram.com/" target="_blank">
+                  <img src="/footer/instagram.svg" />
+                </Box>
+                <Box as="a" href="https://www.whatsapp.com/" target="_blank">
+                  <img src="/footer/whatsapp.svg" />
+                </Box>
               </Flex>
             </Stack>
             <Stack align={"flex-start"} spacing={2}>
