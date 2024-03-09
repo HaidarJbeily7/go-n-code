@@ -75,16 +75,18 @@ export default function HomeServices() {
           </SimpleGrid>
         </Box>
       </Flex>
-      <div
-        style={{
-          position: "absolute",
-          bottom: 1,
-          right: 1,
-          zIndex: 0,
-        }}
-      >
-        <img src="/homepage/services/bg-bottom-right.svg" />
-      </div>
+      <Box position={"relative"}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 1,
+            right: 1,
+            zIndex: 0,
+          }}
+        >
+          <img src="/homepage/services/bg-bottom-right.svg" />
+        </div>
+      </Box>
     </div>
   );
 }
