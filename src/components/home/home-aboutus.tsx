@@ -4,12 +4,7 @@ import PartnerList from "./partnersList";
 export default function HomeAboutUs() {
   return (
     <>
-      <div
-        className="flex min-h-screen flex-col bg-[#F8F9FC]"
-        style={{
-          background: "#FDFDFDFD",
-        }}
-      >
+      <div className="flex min-h-screen flex-col bg-[#F8F9FC]">
         <Flex justifyContent={"space-between"} my={20} mx={36}>
           <Box>
             <Box mb={16}>
