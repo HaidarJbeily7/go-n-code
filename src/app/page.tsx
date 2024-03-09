@@ -1,6 +1,7 @@
 import Footer from "@/components/footer/footer";
 import Hero from "@/components/home/hero";
 import HomeAboutUs from "@/components/home/home-aboutus";
+import HomeNews from "@/components/home/home-news";
 import HomeProjects from "@/components/home/home-projects";
 import HomeServices from "@/components/home/home-services";
 
@@ -11,6 +12,7 @@ export default function Home() {
       <HomeAboutUs />
       <HomeServices />
       <HomeProjects />
+      <HomeNews />
       {/* <Footer /> */}
     </div>
   );
