@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
 import Navbar from "../navbar";
+import OutlineButton from "./home-components/outline-button";
 
 export default function Hero() {
   return (
@@ -34,18 +35,8 @@ export default function Hero() {
               Empowering Enterprises, Startups, and Small Businesses with
               Advanced Technology Solutions.
             </Text>
-            <Button
-              color={"#1B6C86"}
-              variant="outline"
-              m={16}
-              rounded={"45px"}
-              border={"2px"}
-              _hover={{
-                bg: "#F8F9FC",
-              }}
-            >
-              View More
-            </Button>
+
+            <OutlineButton text={"View More"} marginx={16} marginy={16} />
             <img src={"/homepage/polish-circle.svg"} />
           </Box>
           <Box>

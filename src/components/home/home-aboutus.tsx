@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
 import PartnerList from "./partnersList";
+import OutlineButton from "./home-components/outline-button";
 
 export default function HomeAboutUs() {
   return (
@@ -13,18 +14,7 @@ export default function HomeAboutUs() {
             <img src="/homepage/companies/aboutus.svg" />
           </Box>
           <Box maxW={"50%"} mt={16}>
-            <Button
-              color={"#1B6C86"}
-              variant="outline"
-              mb={4}
-              rounded={"45px"}
-              border={"2px"}
-              _hover={{
-                bg: "#F8F9FC",
-              }}
-            >
-              About Us
-            </Button>
+            <OutlineButton text={"About Us"} marginx={0} marginy={4} />
             <Heading
               fontWeight={700}
               fontSize={"50px"}

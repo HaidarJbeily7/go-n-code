@@ -1,6 +1,7 @@
 import { Box, Flex, Text, Button, Heading, SimpleGrid } from "@chakra-ui/react";
 import PartnerList from "./partnersList";
 import ServicesList from "./home-components/services-list";
+import OutlineButton from "./home-components/outline-button";
 
 export default function HomeServices() {
   return (
@@ -10,18 +11,7 @@ export default function HomeServices() {
           <img src="/homepage/services/services-main.svg" />
         </Box>
         <Box maxW={"50%"} mt={16}>
-          <Button
-            color={"#1B6C86"}
-            variant="outline"
-            mb={4}
-            rounded={"45px"}
-            border={"2px"}
-            _hover={{
-              bg: "#F8F9FC",
-            }}
-          >
-            Services
-          </Button>
+          <OutlineButton text="Services" marginx={0} marginy={4} />
           <Box maxW={"85%"}>
             <Heading
               fontWeight={700}

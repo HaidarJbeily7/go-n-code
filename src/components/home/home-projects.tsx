@@ -1,5 +1,6 @@
 import { Box, Text, Button, Flex } from "@chakra-ui/react";
 import ProjectGrid from "./home-components/project-grid";
+import OutlineButton from "./home-components/outline-button";
 
 export default function HomeProjects() {
   return (
@@ -17,18 +18,7 @@ export default function HomeProjects() {
         {/* Pass Whatever values you need to fill this grid with */}
         <ProjectGrid />
         <Flex mt={4} justifyContent={"space-around"}>
-          <Button
-            color={"#1B6C86"}
-            variant="outline"
-            mb={4}
-            rounded={"45px"}
-            border={"2px"}
-            _hover={{
-              bg: "#F8F9FC",
-            }}
-          >
-            View More
-          </Button>
+          <OutlineButton text={"View More"} marginx={0} marginy={4} />
         </Flex>
       </Box>
       <Box position={"relative"}>
