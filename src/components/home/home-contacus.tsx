@@ -5,7 +5,19 @@ import ContactUsForm from "./home-components/contactus-form";
 export default function HomeContactUs() {
   return (
     <div className="flex min-h-screen flex-col bg-[#FDFDFDFD]">
-      <Box mt={16} mb={40}>
+      <Box position={"relative"}>
+        <div
+          style={{
+            position: "absolute",
+            top: 1,
+            right: 1,
+            zIndex: 0,
+          }}
+        >
+          <img src="/homepage/contactus/top-bg-contactus.svg" />
+        </div>
+      </Box>
+      <Box mt={16} mb={40} zIndex={2}>
         <Flex justifyContent={"space-evenly"}>
           <AchievementCard
             img="/homepage/contactus/mobile.svg"
@@ -36,6 +48,28 @@ export default function HomeContactUs() {
           />
           <ContactUsForm />
         </Flex>
+      </Box>
+      <Box position={"relative"}>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 50,
+            right: 1,
+            zIndex: 0,
+          }}
+        >
+          <img src="/homepage/contactus/bottom-bg-contactus.svg" />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 50,
+            left: 1,
+            zIndex: 0,
+          }}
+        >
+          <img src="/homepage/contactus/bottom-bg2-contactus.svg" />
+        </div>
       </Box>
     </div>
   );
