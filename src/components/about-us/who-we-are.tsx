@@ -1,5 +1,4 @@
-import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
-import Navbar from "../navbar";
+import { Box, Flex, Text, Heading } from "@chakra-ui/react";
 
 export default function WhoWeAre() {
   return (
