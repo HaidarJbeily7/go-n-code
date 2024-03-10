@@ -1,40 +1,26 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  Avatar,
-  HStack,
-  Text,
-  IconButton,
-  Menu,
-  MenuButton,
-  MenuList,
-  MenuItem,
-  MenuDivider,
-  useDisclosure,
-  useColorModeValue,
-  Stack,
-  Button,
-  ButtonGroup,
-} from "@chakra-ui/react";
-import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { Box, Flex, HStack, useColorModeValue, Button } from "@chakra-ui/react";
+import { useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 
 interface Props {
   children: React.ReactNode;
+  href: string;
 }
-
 const Links = [
-  "Home",
-  "About Us",
-  "Services",
-  "portfolio",
-  "Blog",
-  "Contact Us",
+  { name: "Home", path: "/" },
+  { name: "About Us", path: "/about-us" },
+  { name: "Services", path: "/services" },
+  { name: "Portfolio", path: "/portfolio" },
+  { name: "Blog", path: "/blog" },
+  { name: "Contact Us", path: "/contact-us" },
 ];
 
-const NavLink = (props: Props) => {
-  const { children } = props;
+const NavLink = ({ children, href }: Props) => {
+  const router = useRouter();
+  const pathname = usePathname();
+  const isActive = pathname === href;
 
   return (
     <Box
@@ -46,10 +32,11 @@ const NavLink = (props: Props) => {
         textDecoration: "none",
         bg: useColorModeValue("gray.200", "gray.700"),
       }}
-      href={"#"}
+      href={href}
       fontWeight={600}
-      color="background: #1F242C;
-      "
+      color={isActive ? "#FFA500" : "#1F242C"}
+      borderBottom={isActive ? "2px solid" : "none"}
+      borderRadius={0}
     >
       {children}
     </Box>
@@ -77,7 +64,9 @@ export default function Navbar() {
               px={14}
             >
               {Links.map((link) => (
-                <NavLink key={link}>{link}</NavLink>
+                <NavLink key={link.name} href={link.path}>
+                  {link.name}
+                </NavLink>
               ))}
             </HStack>
             <Button
