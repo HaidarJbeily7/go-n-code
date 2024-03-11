@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Input, Button, Textarea } from "@chakra-ui/react";
 import AchievementCard from "./home-components/achievement-card";
-import ContactUsForm from "./home-components/contactus-form";
+import HomeContactForm from "./home-components/contactus-form";
 
 export default function HomeContactUs() {
   return (
@@ -46,7 +46,7 @@ export default function HomeContactUs() {
             height={728}
             src="/homepage/contactus/home-contact-us.gif"
           />
-          <ContactUsForm />
+          <HomeContactForm />
         </Flex>
       </Box>
       <Box position={"relative"}>
