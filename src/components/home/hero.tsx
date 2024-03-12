@@ -1,6 +1,7 @@
 import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
 import Navbar from "../navbar";
 import OutlineButton from "./home-components/outline-button";
+import SimpleSidebar from "../sidebar";
 
 export default function Hero() {
   return (
@@ -11,14 +12,23 @@ export default function Hero() {
       }}
     >
       <Navbar />
+      <SimpleSidebar />
       <Box>
-        <Flex justifyContent={"space-between"} my={20} mx={28}>
-          <Box maxW={"45%"}>
+        <Flex
+          justifyContent={"space-between"}
+          my={20}
+          mx={{ base: 2, md: 28 }}
+          flexDir={{ base: "column", md: "row" }}
+        >
+          <Box
+            maxW={{ base: "100%", md: "45%" }}
+            textAlign={{ base: "center", md: "start" }}
+          >
             <Heading
               as={"h1"}
               fontWeight={700}
-              fontSize={"50px"}
-              lineHeight={"78px"}
+              fontSize={{ base: "35px", md: "40px", lg: "50px" }}
+              lineHeight={{ base: "50px", md: "78px" }}
               color={"#393536"}
             >
               Elevate Your Digital Presence with{" "}
@@ -37,7 +47,10 @@ export default function Hero() {
             </Text>
 
             <OutlineButton text={"View More"} marginx={16} marginy={16} />
-            <img src={"/homepage/polish-circle.svg"} />
+
+            <Box display={{ base: "none", md: "none", lg: "block" }}>
+              <img src={"/homepage/polish-circle.svg"} />
+            </Box>
           </Box>
           <Box>
             <img height={650} width={650} src="/homepage/home-hero.gif" />

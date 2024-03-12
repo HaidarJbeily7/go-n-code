@@ -10,12 +10,12 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col">
       <Hero />
-      <HomeAboutUs />
-      <HomeServices />
-      <HomeProjects />
-      <HomeNews />
-      <HomeContactUs />
-      <Footer />
+      {/* <HomeAboutUs /> */}
+      {/* <HomeServices /> */}
+      {/* <HomeProjects /> */}
+      {/* <HomeNews /> */}
+      {/* <HomeContactUs /> */}
+      {/* <Footer /> */}
     </div>
   );
 }

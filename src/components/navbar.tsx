@@ -25,6 +25,7 @@ const NavLink = ({ children, href }: Props) => {
   return (
     <Box
       as="a"
+      minW={"fit-content"}
       px={2}
       py={1}
       rounded={"md"}
@@ -37,6 +38,7 @@ const NavLink = ({ children, href }: Props) => {
       color={isActive ? "#FFA500" : "#1F242C"}
       borderBottom={isActive ? "2px solid" : "none"}
       borderRadius={0}
+      fontSize={"16px"}
     >
       {children}
     </Box>
@@ -49,20 +51,18 @@ export default function Navbar() {
       <Box
         bg={useColorModeValue("transparent", "transparent")}
         px={4}
-        mx={32}
+        mx={16}
         my={16}
+        display={{ base: "none", md: "none", lg: "block" }}
+        maxW={"auto"}
+        justifyContent={"center"}
       >
-        <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <HStack spacing={8} alignItems={"center"}>
+        <Flex alignItems={"center"} justifyContent={"space-evenly"}>
+          <HStack spacing={8} alignItems={"center"} minH={32} minW={200}>
             <img src="/homepage/logo.svg" alt="GoNCode Logo" />
           </HStack>
-          <Flex alignItems={"center"}>
-            <HStack
-              as={"nav"}
-              spacing={6}
-              display={{ base: "none", md: "flex" }}
-              px={14}
-            >
+          <Flex alignItems={"center"} justifyContent={"space-between"}>
+            <HStack as={"nav"} spacing={6} px={16}>
               {Links.map((link) => (
                 <NavLink key={link.name} href={link.path}>
                   {link.name}
