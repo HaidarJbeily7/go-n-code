@@ -16,7 +16,8 @@ export default function FooterHeader() {
     <Box
       //   bg={useColorModeValue("#FFA500", "#FFCC6F")}
       //   bgGradient="linear( #FFCC6F, #FFA500)"
-      maxW={"80%"}
+
+      maxW={{ base: "100%", md: "80%" }}
       alignSelf={"center"}
       rounded={"10px"}
       //   bgImage="/footer/email.svg"
@@ -36,19 +37,34 @@ export default function FooterHeader() {
     `,
       }}
     >
-      <Grid my={12} mx={16} gap={16} templateColumns="repeat(6, 1fr)">
-        <GridItem colSpan={2}>
-          <Text fontSize={"40px"} fontWeight={600} lineHeight={"51px"}>
+      <Grid
+        my={{ base: 2, lg: 12 }}
+        mx={{ base: 2, lg: 16 }}
+        gap={{ base: 2, lg: 16 }}
+        templateColumns={{ base: "repeat(1,1fr)", lg: "repeat(6,1fr)" }}
+      >
+        <GridItem colSpan={{ base: 3, md: 3, lg: 2 }} justifySelf={"center"}>
+          <Text
+            fontSize={{ base: "20px", md: "30px", lg: "40px" }}
+            fontWeight={600}
+            lineHeight={"51px"}
+          >
             Subscribe To Our Newsletter
           </Text>
         </GridItem>
-        <GridItem colSpan={4}>
-          <Flex h={"100%"} alignItems={"center"} justifyContent={"flex-end"}>
+        <GridItem colSpan={{ base: 3, md: 3, lg: 4 }} justifySelf={"center"}>
+          <Flex
+            h={"100%"}
+            alignItems={"center"}
+            justifyContent={"flex-end"}
+            mb={6}
+          >
             <Input
+              fontSize={{ base: "14px", md: "16px" }}
               placeholder="Your e-mail address"
               color={" #101A29"}
-              w={"418px"}
-              h={"60px"}
+              w={{ base: "250px", md: "350", lg: "390px" }}
+              h={{ base: "50px", md: "50px", lg: "60px" }}
               bg={"#FFFFF"}
               borderEndRadius={0}
               sx={{
@@ -60,8 +76,9 @@ export default function FooterHeader() {
             <Button
               colorScheme="teal"
               size="lg"
-              w={"162px"}
-              h={"60px"}
+              fontSize={{ base: "14px", md: "16px" }}
+              w={{ base: "97px", md: "100", lg: "155px" }}
+              h={{ base: "50px", md: "50px", lg: "60px" }}
               bg={"#393536"}
               borderStartRadius={0}
               _hover={{

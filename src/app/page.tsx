@@ -15,7 +15,7 @@ export default function Home() {
       <HomeProjects />
       <HomeNews />
       <HomeContactUs />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }

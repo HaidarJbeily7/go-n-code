@@ -35,30 +35,40 @@ export default function Footer() {
       <Box>
         <FooterHeader />
       </Box>
-      <Flex justifyContent={"center"}>
-        <Container as={Stack} maxW={"6xl"} py={10} m={16} mt={24}>
+      <Flex
+        justifyContent={"center"}
+        textAlign={{ base: "center", md: "start" }}
+      >
+        <Container
+          as={Stack}
+          maxW={"6xl"}
+          py={{ base: 4, md: 12 }}
+          m={{ base: 2, md: 8, lg: 16 }}
+          mt={{ base: 24, md: 20, lg: 24 }}
+        >
           <SimpleGrid
             columns={{ base: 1, sm: 2, md: 3 }}
-            spacing={16}
+            spacing={{ base: 8, md: 8, lg: 16 }}
             justifyContent={"space-around"}
+            justifyItems={"center"}
           >
             <Stack align={"flex-start"} spacing={4}>
               <ListHeader>
                 <img src="/homepage/logoLight.svg" />
               </ListHeader>
-              <Box fontWeight={500} fontSize={"16px"} mt={1}>
+              <Box fontWeight={500} fontSize={"16px"} mt={1} minW={"100%"}>
                 <Text>Dubai, UAE</Text>
                 <Text>Mon-Sat: 8:00 AM – 9:00 PM</Text>
               </Box>
-              <Stack direction={"row"} align={"center"} spacing={2}>
-                <Box as="a" href={"#"}>
-                  (+888) 123 456 765
-                </Box>
-              </Stack>
-              <Box as="a" href={"#"}>
-                infoname@mail.com
+
+              <Box as="a" href={"#"} minW={"100%"} mt={2}>
+                <Text>(+888) 123 456 765</Text>
               </Box>
-              <Flex gap={2}>
+
+              <Box as="a" href={"#"} minW={"100%"}>
+                <Text>infoname@mail.com</Text>
+              </Box>
+              <Flex gap={2} minW={"100%"} justifyContent={"center"}>
                 <Box as="a" href="https://www.facebook.com/" target="_blank">
                   <img src="/footer/facebook.svg" />
                 </Box>
@@ -73,9 +83,16 @@ export default function Footer() {
                 </Box>
               </Flex>
             </Stack>
-            <Stack align={"flex-start"} spacing={2}>
+            <Stack align={{ base: "center", md: "flex-start" }} spacing={2}>
               <ListHeader>
-                <Text fontSize={"20px"} fontWeight={600} mb={4}>
+                <Text
+                  fontSize={"20px"}
+                  fontWeight={600}
+                  mb={4}
+                  minW={"100%"}
+                  textAlign={"center"}
+                  alignSelf={"center"}
+                >
                   Our services
                 </Text>
               </ListHeader>
@@ -135,7 +152,7 @@ export default function Footer() {
                 <Text>BlockChain Development</Text>
               </Box>
             </Stack>
-            <Stack align={"flex-start"} spacing={6}>
+            <Stack align={{ base: "center", md: "flex-start" }} spacing={6}>
               <ListHeader>
                 <Text fontSize={"20px"} fontWeight={600} mb={1}>
                   Recent blog
@@ -165,11 +182,35 @@ export default function Footer() {
             flexGrow: 1,
           }}
         ></Flex>
-        <Flex justify={"space-between"} mx={16} my={4}>
-          <Text pt={1} fontSize={"sm"} textAlign={"center"}>
+        <Flex
+          justify={"space-between"}
+          mx={16}
+          my={4}
+          flexDir={{ base: "column-reverse", md: "row" }}
+        >
+          <Text
+            pt={1}
+            mt={{ base: 4, md: 0 }}
+            fontSize={"sm"}
+            textAlign={"center"}
+          >
             © Yoursitename 2023 | All Rights Reserved
           </Text>
-          <Flex gap={4}>
+          <Flex
+            display={{ base: "flex", md: "none" }}
+            align={"center"}
+            _before={{
+              content: '""',
+              borderBottom: "0.5px solid",
+              borderColor: useColorModeValue("gray.200", "gray.700"),
+              flexGrow: 1,
+            }}
+          ></Flex>
+          <Flex
+            gap={{ base: 8, md: 4 }}
+            flexDir={{ base: "column", md: "row" }}
+            mb={{ base: 4, md: 0 }}
+          >
             <Button
               color={"#FFFFFF"}
               variant="link"
