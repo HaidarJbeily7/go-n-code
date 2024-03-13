@@ -21,6 +21,7 @@ export default function HomeContactForm() {
           </Text>
           <Input
             focusBorderColor="#FFA500"
+            fontSize={{ base: "12px", md: "16px" }}
             minH={16}
             bg={"#ffffff"}
             placeholder="Your Name"
@@ -42,6 +43,7 @@ export default function HomeContactForm() {
           </Text>
           <Input
             minH={16}
+            fontSize={{ base: "12px", md: "16px" }}
             bg={"#ffffff"}
             focusBorderColor="#FFA500"
             placeholder="Phone Number"
@@ -65,6 +67,7 @@ export default function HomeContactForm() {
       <Input
         minH={16}
         bg={"#ffffff"}
+        fontSize={{ base: "12px", md: "16px" }}
         focusBorderColor="#FFA500"
         placeholder="Your Email"
         _placeholder={{
@@ -84,6 +87,7 @@ export default function HomeContactForm() {
       </Text>
       <Textarea
         minH={32}
+        fontSize={{ base: "12px", md: "16px" }}
         bg={"#ffffff"}
         focusBorderColor="#FFA500"
         placeholder="Message"

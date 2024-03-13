@@ -21,7 +21,12 @@ export default function FooterCard({
             </Text>
           </Flex>
 
-          <Text fontWeight={600} fontSize={"16px"} lineHeight={"25px"}>
+          <Text
+            fontWeight={600}
+            fontSize={{ base: "14px", lg: "16px" }}
+            lineHeight={"25px"}
+            textAlign={"start"}
+          >
             {description}
           </Text>
         </Box>

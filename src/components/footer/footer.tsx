@@ -184,7 +184,7 @@ export default function Footer() {
         ></Flex>
         <Flex
           justify={"space-between"}
-          mx={16}
+          mx={{ base: 0, md: 16 }}
           my={4}
           flexDir={{ base: "column-reverse", md: "row" }}
         >
