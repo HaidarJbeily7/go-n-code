@@ -16,7 +16,7 @@ export default function Hero() {
       <Box>
         <Flex
           justifyContent={"space-between"}
-          my={20}
+          my={{ base: 2, md: 20 }}
           mx={{ base: 2, md: 28 }}
           flexDir={{ base: "column", md: "row" }}
         >
