@@ -8,6 +8,7 @@ export default function ProjectGrid() {
       templateRows="repeat(3, 1fr)"
       templateColumns="repeat(4, 1fr)"
       gap={4}
+      display={{ base: "none", md: "grid" }}
     >
       <GridItem
         rowSpan={1}
