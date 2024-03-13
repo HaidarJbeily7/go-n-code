@@ -14,7 +14,7 @@ export default function Home() {
       <HomeServices />
       <HomeProjects />
       <HomeNews />
-      {/* <HomeContactUs /> */}
+      <HomeContactUs />
       {/* <Footer /> */}
     </div>
   );

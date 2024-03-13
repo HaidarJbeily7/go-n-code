@@ -12,7 +12,7 @@ export default function AchievementCard({
   text,
 }: AchievementCardProps) {
   return (
-    <Box>
+    <Box my={8}>
       <img src={img} />
       <Text fontWeight={600} fontSize={"40px"} color={"#393536"}>
         {number}
