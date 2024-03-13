@@ -6,16 +6,27 @@ import OutlineButton from "./home-components/outline-button";
 export default function HomeServices() {
   return (
     <div className="flex min-h-screen flex-col bg-[#F6F8FB]">
-      <Flex justifyContent={"space-between"} my={20} mx={36} gap={16}>
-        <Box>
+      <Flex
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        my={{ base: 2, md: 8, lg: 20 }}
+        mx={{ base: 2, md: 8, lg: 36 }}
+        flexDir={{ base: "column", md: "column", lg: "row" }}
+        gap={16}
+      >
+        <Box minH={"100%"}>
           <img src="/homepage/services/services-main.svg" />
         </Box>
-        <Box maxW={"50%"} mt={16}>
+        <Box
+          maxW={{ base: "100%", md: "100%", lg: "50%" }}
+          mt={[0, 16]}
+          textAlign={{ base: "center", md: "center", lg: "start" }}
+        >
           <OutlineButton text="Services" marginx={0} marginy={4} />
-          <Box maxW={"85%"}>
+          <Box maxW={{ base: "100%", md: "100%", lg: "85%" }}>
             <Heading
-              fontWeight={700}
-              fontSize={"50px"}
+              fontWeight={[600, 700]}
+              fontSize={{ base: "35px", md: "40px", lg: "50px" }}
               lineHeight={"78px"}
               color={"#393536"}
             >
@@ -33,7 +44,7 @@ export default function HomeServices() {
             </Text>
           </Box>
 
-          <SimpleGrid columns={2} spacing={10} mt={20}>
+          <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt={20}>
             <ServicesList
               img={"/homepage/services/web-dev.svg"}
               header={"Web Development"}
@@ -65,7 +76,10 @@ export default function HomeServices() {
           </SimpleGrid>
         </Box>
       </Flex>
-      <Box position={"relative"}>
+      <Box
+        position={"relative"}
+        display={{ base: "none", md: "none", lg: "block" }}
+      >
         <div
           style={{
             position: "absolute",

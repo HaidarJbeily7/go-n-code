@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Text, Flex } from "@chakra-ui/react";
 
 interface ServiceListProps {
   img: string;
@@ -12,8 +12,13 @@ export default function ServicesList({
   description,
 }: ServiceListProps) {
   return (
-    <Box>
-      <img src={img} />
+    <Flex
+      flexDir={"column"}
+      alignItems={{ base: "center", md: "center", lg: "start" }}
+    >
+      <Box>
+        <img src={img} />
+      </Box>
       <Text fontWeight={600} fontSize={"20px"} color={"#393536"} my={2}>
         {header}
       </Text>
@@ -26,6 +31,6 @@ export default function ServicesList({
       >
         {description}
       </Text>
-    </Box>
+    </Flex>
   );
 }

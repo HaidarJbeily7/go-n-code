@@ -11,7 +11,7 @@ export default function Home() {
     <div className="flex min-h-screen flex-col">
       <Hero />
       <HomeAboutUs />
-      {/* <HomeServices /> */}
+      <HomeServices />
       {/* <HomeProjects /> */}
       {/* <HomeNews /> */}
       {/* <HomeContactUs /> */}
