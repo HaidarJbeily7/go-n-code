@@ -9,8 +9,16 @@ export default function WhoWeAre() {
       }}
     >
       <Box>
-        <Flex justifyContent={"space-between"} my={16} mx={24} gap={12}>
-          <Box maxW={"50%"}>
+        <Flex
+          justifyContent={"space-between"}
+          my={{ base: 8, md: 16 }}
+          mx={{ base: 2, md: 24 }}
+          gap={12}
+          flexDir={{ base: "column-reverse", lg: "row" }}
+          textAlign={{ base: "center", md: "start" }}
+          alignItems={"center"}
+        >
+          <Box maxW={{ base: "100%", md: "50%" }} mx={8}>
             <Heading
               as={"h1"}
               fontWeight={700}
@@ -18,6 +26,7 @@ export default function WhoWeAre() {
               lineHeight={"78px"}
               color={"#FFA500"}
               whiteSpace={"pre-line"}
+              display={{ base: "none", lg: "block" }}
             >
               Who We Are?
             </Heading>
@@ -30,7 +39,12 @@ export default function WhoWeAre() {
               >
                 01
               </Text>
-              <Text fontWeight={400} fontSize={"20px"} color={"#555555"}>
+              <Text
+                fontWeight={400}
+                fontSize={{ base: "15px", md: "20px" }}
+                color={"#555555"}
+                lineHeight={{ base: "20px", md: "30px" }}
+              >
                 GoNCode is where innovation meets expertise. As a leading IT
                 solutions company based in Dubai UAE, we specialize in
                 delivering high-tech solutions tailored to meet the unique needs
@@ -39,7 +53,11 @@ export default function WhoWeAre() {
                 software development services.
               </Text>
             </Box>
-            <Flex gap={16} mt={16}>
+            <Flex
+              gap={16}
+              mt={16}
+              flexDir={{ base: "column-reverse", lg: "row" }}
+            >
               <Box>
                 <Text
                   fontWeight={700}
@@ -51,14 +69,15 @@ export default function WhoWeAre() {
                 </Text>
                 <Text
                   fontWeight={400}
-                  fontSize={"20px"}
+                  fontSize={{ base: "15px", md: "20px" }}
                   color={"#555555"}
+                  lineHeight={{ base: "20px", md: "30px" }}
                   whiteSpace={"break-spaces"}
                 >
-                  At GoNCode, we {"\n"}understand the dynamic landscape of the
-                  digital era, and our team of seasoned professionals is
-                  dedicated to providing top-notch IT solutions that drive
-                  growth and enhance operational efficiency.
+                  At GoNCode, we understand the dynamic landscape of the digital
+                  era, and our team of seasoned professionals is dedicated to
+                  providing top-notch IT solutions that drive growth and enhance
+                  operational efficiency.
                 </Text>
               </Box>
               <Box>
@@ -72,8 +91,9 @@ export default function WhoWeAre() {
                 </Text>
                 <Text
                   fontWeight={400}
-                  fontSize={"20px"}
+                  fontSize={{ base: "15px", md: "20px" }}
                   color={"#555555"}
+                  lineHeight={{ base: "20px", md: "30px" }}
                   whiteSpace={"break-spaces"}
                 >
                   Whether you're a large enterprise seeking scalable solutions,
@@ -84,9 +104,20 @@ export default function WhoWeAre() {
               </Box>
             </Flex>
           </Box>
-          <Box my={24}>
+          <Box my={{ base: 2, md: 8, lg: 24 }}>
             <img src="/about-us/who-we-are.svg" />
           </Box>
+          <Heading
+            as={"h1"}
+            fontWeight={600}
+            fontSize={"35px"}
+            lineHeight={"50px"}
+            color={"#FFA500"}
+            whiteSpace={"pre-line"}
+            display={{ base: "block", lg: "none" }}
+          >
+            Who We Are?
+          </Heading>
         </Flex>
       </Box>
     </div>

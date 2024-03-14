@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
 import Navbar from "../navbar";
+import SimpleSidebar from "../sidebar";
 
 export default function Hero() {
   return (
@@ -10,13 +11,23 @@ export default function Hero() {
       }}
     >
       <Navbar />
+      <SimpleSidebar />
       <Box>
-        <Flex justifyContent={"space-between"} my={4} mx={24}>
-          <Box maxW={"45%"} my={24}>
+        <Flex
+          justifyContent={"space-between"}
+          my={{ base: 2, md: 4 }}
+          mx={{ base: 2, md: 24 }}
+          flexDir={{ base: "column", md: "row" }}
+        >
+          <Box
+            maxW={{ base: "100%", md: "45%" }}
+            textAlign={{ base: "center", md: "start" }}
+            my={{ base: 4, md: 24 }}
+          >
             <Heading
               as={"h1"}
               fontWeight={700}
-              fontSize={"50px"}
+              fontSize={{ base: "35px", md: "40px", lg: "50px" }}
               lineHeight={"78px"}
               color={"#393536"}
               whiteSpace={"pre-line"}

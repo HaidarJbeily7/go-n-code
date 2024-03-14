@@ -4,30 +4,42 @@ import TeamCard from "./about-us-components/team-card";
 export default function Team() {
   return (
     <div
-      className="flex min-h-screen flex-col bg-[#F8F9FC]"
+      className="flex flex-col bg-[#F8F9FC]"
       style={{
         background: "#FFFFFF",
       }}
     >
-      <Box my={12}>
+      <Box
+        mt={{ base: 4, md: 8, lg: 12 }}
+        mb={{ base: 52, md: 52, lg: 60 }}
+        mx={2}
+      >
         <Flex
           flexDirection={"column"}
           alignItems={"center"}
           textAlign={"center"}
         >
-          <Text fontWeight={700} fontSize={"48px"} color={"#333333"}>
+          <Text
+            fontWeight={[600, 700]}
+            fontSize={{ base: "35px", md: "48px" }}
+            color={"#333333"}
+          >
             Meet Our <span className="text-[#FFA500]">Great</span> Team
           </Text>
           <Text
             fontWeight={400}
-            fontSize={"16px"}
+            fontSize={{ base: "15px", md: "16px" }}
             color={"#666666"}
             whiteSpace={"break-spaces"}
           >
             Roles in our company are distributed among specialists and{"\n"}
             professionals with unlimited expertise.
           </Text>
-          <Flex gap={8} mt={20}>
+          <Flex
+            gap={8}
+            mt={{ base: 8, md: 20 }}
+            flexDir={{ base: "column", md: "row" }}
+          >
             <TeamCard
               img="/about-us/team1.png"
               title="web developer"

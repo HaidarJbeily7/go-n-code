@@ -16,8 +16,11 @@ export default function WhyCard({
   return (
     <Flex
       flexDirection={"column"}
-      alignItems={placement == "left" ? "flex-end" : "flex-start"}
-      textAlign={placement == "left" ? "right" : "left"}
+      alignItems={{
+        base: "center",
+        lg: placement == "left" ? "flex-end" : "flex-start",
+      }}
+      textAlign={{ base: "center", lg: placement == "left" ? "right" : "left" }}
       ml={4}
       gap={4}
     >
