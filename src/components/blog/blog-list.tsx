@@ -1,89 +1,44 @@
 import { Box, Flex, Text, Heading } from "@chakra-ui/react";
 import Navbar from "../navbar";
 import BlogCard from "./blog-card";
+import BlogCardGrid from "./blog-card-grid";
 
 export default function BlogList() {
   return (
     <div
-      className="flex  flex-col bg-[#FDFDFDFD] mx-20 mt-6"
+      className="flex  flex-col bg-[#FDFDFDFD] mt-6"
       style={{
         background: "#FDFDFDFD",
       }}
     >
-      <Box mb={32}>
+      <Box mb={52} mx={{ base: 2, md: 8, lg: 20 }}>
         <Flex
           flexDir={"column"}
           alignItems={"center"}
           textAlign={"center"}
           gap={16}
         >
-          <Heading fontWeight={700} fontSize={"50px"} color={"#393536"}>
+          <Heading
+            fontWeight={700}
+            fontSize={"50px"}
+            color={"#393536"}
+            display={{ base: "none", lg: "block" }}
+          >
             Blogs
           </Heading>
 
           <Text
-            fontWeight={700}
-            fontSize={"50px"}
+            fontWeight={[600, 700]}
+            fontSize={{ base: "35px", md: "40px", lg: "50px" }}
             color={"#393536"}
-            maxW={"70%"}
+            maxW={{ base: "100%", md: "70%" }}
           >
             Every Thing You Need To Know About Programming, Design And{" "}
             <span className="text-[#FFA500]">IT solution </span>
           </Text>
         </Flex>
-        <Flex flexDir={"column"} mt={16} mb={32} gap={12}>
-          <Flex justifyContent={"space-around"} gap={4}>
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the worldWeb development can "
-            />
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world Web development"
-            />
-          </Flex>
-          <Flex justifyContent={"space-around"} gap={4}>
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-          </Flex>
-          <Flex justifyContent={"space-around"} gap={4}>
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-            <BlogCard
-              img="/homepage/polish-square.svg"
-              date="October 19, 2022"
-              header="Web development can change the world"
-            />
-          </Flex>
-        </Flex>
+
+        <BlogCardGrid />
       </Box>
     </div>
   );
