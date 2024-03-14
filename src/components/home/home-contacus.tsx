@@ -22,7 +22,12 @@ export default function HomeContactUs() {
       </Box>
       <Box mt={{ base: 2, md: 16 }} mb={40} zIndex={2}>
         <Flex justifyContent={"space-evenly"}>
-          <Box>
+          <Flex
+            flexDir={{ base: "column", md: "row" }}
+            justifyContent={"space-around"}
+            w={"100%"}
+            alignItems={"center"}
+          >
             <AchievementCard
               img="/homepage/contactus/mobile.svg"
               number="200+"
@@ -33,8 +38,13 @@ export default function HomeContactUs() {
               number="100+"
               text="Complete Project"
             />
-          </Box>
-          <Box>
+          </Flex>
+          <Flex
+            flexDir={{ base: "column", md: "row" }}
+            justifyContent={"space-around"}
+            w={"100%"}
+            alignItems={"center"}
+          >
             <AchievementCard
               img="/homepage/contactus/links.svg"
               number="20+"
@@ -45,7 +55,7 @@ export default function HomeContactUs() {
               number="200+"
               text="Happy Client"
             />
-          </Box>
+          </Flex>
         </Flex>
         <Flex
           mx={{ base: 0, md: 16 }}
