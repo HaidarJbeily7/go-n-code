@@ -8,6 +8,7 @@ export default function PortfolioGrid() {
       templateRows="repeat(5, 1fr)"
       templateColumns="repeat(4, 1fr)"
       gap={4}
+      display={{ base: "none", lg: "grid" }}
     >
       <GridItem
         rowSpan={1}

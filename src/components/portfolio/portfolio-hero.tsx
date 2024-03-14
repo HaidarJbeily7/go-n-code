@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
 import Navbar from "../navbar";
+import SimpleSidebar from "../sidebar";
 
 export default function PortfoliosHero() {
   return (
@@ -10,18 +11,28 @@ export default function PortfoliosHero() {
       }}
     >
       <Navbar />
+      <SimpleSidebar />
       <Box>
-        <Flex justifyContent={"space-between"} my={4} mx={24}>
-          <Box maxW={"45%"} my={24}>
+        <Flex
+          justifyContent={"space-between"}
+          my={4}
+          mx={{ base: 2, md: 24 }}
+          flexDir={{ base: "column", md: "row" }}
+        >
+          <Box
+            maxW={{ base: "100%", md: "45%" }}
+            my={{ base: 2, md: 24 }}
+            textAlign={{ base: "center", md: "start" }}
+          >
             <Heading
               as={"h1"}
-              fontWeight={700}
-              fontSize={"50px"}
-              lineHeight={"78px"}
+              fontWeight={[600, 700]}
+              fontSize={{ base: "33px", md: "40px", lg: "50px" }}
+              lineHeight={{ base: "50px", md: "78px" }}
               color={"#393536"}
               whiteSpace={"pre-line"}
             >
-              Here You Will Find {"\n"}99 Reason To Choose
+              Here You Will Find {"\n"}99 Reason To Choose{" "}
               <span className="text-[#FFA500]">Goncode</span>
             </Heading>
           </Box>
