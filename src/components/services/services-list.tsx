@@ -4,12 +4,12 @@ import ServicesCard from "./services-card";
 export default function ServicesList() {
   return (
     <div
-      className="flex  flex-col bg-[#FFFFFF] m-16"
+      className="flex flex-col bg-[#FFFFFF] "
       style={{
         background: "#FFFFFF",
       }}
     >
-      <Box>
+      <Box mb={40}>
         <ServicesCard
           img="/services/web-service.svg"
           header="Web Development"
