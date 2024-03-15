@@ -53,11 +53,7 @@ export default function WhoWeAre() {
                 software development services.
               </Text>
             </Box>
-            <Flex
-              gap={16}
-              mt={16}
-              flexDir={{ base: "column-reverse", lg: "row" }}
-            >
+            <Flex gap={16} mt={16} flexDir={{ base: "column", lg: "row" }}>
               <Box>
                 <Text
                   fontWeight={700}
