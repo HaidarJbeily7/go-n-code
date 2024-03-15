@@ -4,22 +4,30 @@ import ContactUsMap from "./contact-us-map";
 
 export default function ContactUsForm() {
   return (
-    <Box mt={16} mb={8} bg={"#FDFDFDFD"}>
+    <Box mt={{ base: 4, md: 16 }} mb={{ base: 4, md: 8 }} bg={"#FDFDFDFD"}>
       <Flex
         flexDir={"column"}
         alignItems={"center"}
         textAlign={"center"}
-        gap={8}
+        gap={[2, 8]}
       >
-        <Text fontWeight={700} fontSize={"16px"} color={"#393536"}>
+        <Text
+          fontWeight={[600, 700]}
+          fontSize={{ base: "13px", md: "14px", lg: "16px" }}
+          color={"#393536"}
+        >
           GET IN TOUCH
         </Text>
-        <Text fontWeight={700} fontSize={"48px"} color={"#393536"}>
+        <Text
+          fontWeight={[600, 700]}
+          fontSize={{ base: "35px", md: "40px", lg: "48px" }}
+          color={"#393536"}
+        >
           Contact Us
         </Text>
         <Text
           fontWeight={500}
-          fontSize={"16px"}
+          fontSize={{ base: "10px", md: "12px", lg: "16px" }}
           color={"#393536"}
           whiteSpace={"break-spaces"}
         >

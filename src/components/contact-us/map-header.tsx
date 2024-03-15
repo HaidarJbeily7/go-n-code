@@ -25,7 +25,11 @@ export default function MapHeader() {
         width: "100%", // Keep the max width from the original style
       }}
     >
-      <Grid templateColumns={"repeat(3,1fr)"} gap={12} mx={16}>
+      <Grid
+        templateColumns={"repeat(3,1fr)"}
+        gap={{ base: 2, lg: 12 }}
+        mx={{ base: 2, lg: 16 }}
+      >
         <GridItem
           bg={"#FFFFFF"}
           border={"1px"}
@@ -33,13 +37,27 @@ export default function MapHeader() {
           rounded={"10px"}
           boxShadow="2xl"
         >
-          <Flex p={12} justifyContent={"center"} gap={4}>
-            <img src="/contact-us/contact-icon.svg" />
+          <Flex
+            p={{ base: 4, md: 16 }}
+            justifyContent={"center"}
+            gap={{ base: 2, lg: 4 }}
+          >
+            <Box w={{ base: "20px", lg: "50px" }}>
+              <img src="/contact-us/contact-icon.svg" />
+            </Box>
             <Box>
-              <Text fontWeight={600} fontSize={"20px"} color={"#101A29"}>
+              <Text
+                fontWeight={600}
+                fontSize={{ base: "8px", md: "14px", lg: "20px" }}
+                color={"#101A29"}
+              >
                 Contacts us
               </Text>
-              <Text fontWeight={400} fontSize={"16px"} color={"#101A29"}>
+              <Text
+                fontWeight={400}
+                fontSize={{ base: "5px", md: "10px", lg: "16px" }}
+                color={"#101A29"}
+              >
                 88 01234 2345 12
               </Text>
             </Box>
@@ -52,13 +70,27 @@ export default function MapHeader() {
           rounded={"10px"}
           boxShadow="2xl"
         >
-          <Flex p={12} justifyContent={"center"} gap={4}>
-            <img src="/contact-us/email-icon.svg" />
+          <Flex
+            p={{ base: 4, md: 16 }}
+            justifyContent={"center"}
+            gap={{ base: 2, lg: 4 }}
+          >
+            <Box w={{ base: "20px", lg: "50px" }}>
+              <img src="/contact-us/email-icon.svg" />
+            </Box>
             <Box>
-              <Text fontWeight={600} fontSize={"20px"} color={"#101A29"}>
+              <Text
+                fontWeight={600}
+                fontSize={{ base: "8px", md: "14px", lg: "20px" }}
+                color={"#101A29"}
+              >
                 Email
               </Text>
-              <Text fontWeight={400} fontSize={"16px"} color={"#101A29"}>
+              <Text
+                fontWeight={400}
+                fontSize={{ base: "5px", md: "10px", lg: "16px" }}
+                color={"#101A29"}
+              >
                 Comism@mail.com
               </Text>
             </Box>
@@ -71,13 +103,28 @@ export default function MapHeader() {
           rounded={"10px"}
           boxShadow="2xl"
         >
-          <Flex p={12} justifyContent={"center"} gap={4}>
-            <img src="/contact-us/location-icon.svg" />
+          <Flex
+            p={{ base: 4, md: 16 }}
+            justifyContent={"center"}
+            gap={{ base: 2, lg: 4 }}
+          >
+            <Box w={{ base: "20px", lg: "50px" }}>
+              <img src="/contact-us/location-icon.svg" />
+            </Box>
+
             <Box>
-              <Text fontWeight={600} fontSize={"20px"} color={"#101A29"}>
+              <Text
+                fontWeight={600}
+                fontSize={{ base: "8px", md: "14px", lg: "20px" }}
+                color={"#101A29"}
+              >
                 Location
               </Text>
-              <Text fontWeight={400} fontSize={"16px"} color={"#101A29"}>
+              <Text
+                fontWeight={400}
+                fontSize={{ base: "5px", md: "10px", lg: "16px" }}
+                color={"#101A29"}
+              >
                 99 united,America
               </Text>
             </Box>

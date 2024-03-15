@@ -1,9 +1,10 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Image } from "@chakra-ui/react";
 import MapHeader from "./map-header";
+import { url } from "inspector";
 
 export default function ContactUsMap() {
   return (
-    <Box w={"100%"}>
+    <Box>
       <Box position={"relative"}>
         <MapHeader />
       </Box>
@@ -13,8 +14,7 @@ export default function ContactUsMap() {
       <Box position={"relative"}>
         <MapHeader />
       </Box>
-
-      <img src="/contact-us/map.svg" width={"100%"} />
+      <Image src="/contact-us/map.png" minW={"100%"} minH={300} />
     </Box>
   );
 }
