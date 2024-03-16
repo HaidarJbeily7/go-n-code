@@ -1,20 +1,58 @@
 "use client";
 import { Box, Flex, Text, Input, Button, Textarea } from "@chakra-ui/react";
 import { useState } from "react";
-import { sendEmail } from "@/utils/send-email";
+// import { sendEmail } from "@/utils/send-email";
+import { useToast } from "@chakra-ui/react";
 
 export default function MessageForm() {
   const [name, setName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [emailAddress, setEmailAddress] = useState("");
   const [message, setMessage] = useState("");
+  const toast = useToast(); // For showing feedback to the user
+
+  // const handleSubmit = async () => {
+  //   // e.preventDefault(); // Prevent default form submission behavior
+  //   // await sendEmail({ name, phoneNumber, emailAddress, message });
+  //   // Optional: Clear form or show success message
+  // };
 
   const handleSubmit = async (e: any) => {
-    e.preventDefault(); // Prevent default form submission behavior
+    e.preventDefault(); // Don't forget to prevent the default form submit action
 
-    await sendEmail({ name, phoneNumber, emailAddress, message });
+    try {
+      const response = await fetch("/api/send", {
+        // Adjust this URL path as necessary
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name, phoneNumber, emailAddress, message }),
+      });
 
-    // Optional: Clear form or show success message
+      if (response.ok) {
+        // Assuming the server responds with JSON
+        const data = await response.json();
+        console.log(data); // For debugging, remove in production
+        // Reset form fields here if necessary
+        toast({
+          title: "Message sent successfully.",
+          status: "success",
+          duration: 5000,
+          isClosable: true,
+        });
+      } else {
+        throw new Error("Failed to send message");
+      }
+    } catch (error: any) {
+      toast({
+        title: "Failed to send message.",
+        description: error.message,
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+    }
   };
 
   return (
