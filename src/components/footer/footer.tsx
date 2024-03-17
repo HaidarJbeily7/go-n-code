@@ -68,7 +68,11 @@ export default function Footer() {
               <Box as="a" href={"#"} minW={"100%"}>
                 <Text>infoname@mail.com</Text>
               </Box>
-              <Flex gap={2} minW={"100%"} justifyContent={"center"}>
+              <Flex
+                gap={2}
+                minW={"100%"}
+                justifyContent={{ base: "center", md: "flex-start" }}
+              >
                 <Box as="a" href="https://www.facebook.com/" target="_blank">
                   <img src="/footer/facebook.svg" />
                 </Box>
