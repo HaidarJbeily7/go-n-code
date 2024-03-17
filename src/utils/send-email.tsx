@@ -1,69 +1,63 @@
-// // import { Resend } from "resend";
+import emailjs from "@emailjs/browser";
+import { useToast } from "@chakra-ui/react";
+import { useState } from "react";
 
-// // interface sendEmailProps {
-// //   name: string;
-// //   phoneNumber: string;
-// //   emailAddress: string;
-// //   message: string;
-// // }
+export function useSendEmail() {
+  const toast = useToast(); // For showing feedback to the user
+  const [isSending, setIsSending] = useState(false);
+  const [error, setError] = useState(null);
 
-// // const resend = new Resend("re_V5ijSVCV_Q83JFGieHKaE9h7qXk9tch58");
+  interface SendEmailProps {
+    name: string;
+    phoneNumber: string;
+    email: string;
+    message: string;
+  }
 
-// // export const sendEmail = async ({
-// //   name,
-// //   phoneNumber,
-// //   emailAddress,
-// //   message,
-// // }: sendEmailProps) => {
-// //   try {
-// //     await resend.emails.send({
-// //       from: "`${emailAddress}`",
-// //       to: "billybeatsboone@gmail.com",
-// //       subject: `New Message from ${name}`,
-// //       html: `
-// //         <p><strong>Name:</strong> ${name}</p>
-// //         <p><strong>Phone Number:</strong> ${phoneNumber}</p>
-// //         <p><strong>Email Address:</strong> ${emailAddress}</p>
-// //         <p><strong>Message:</strong> ${message}</p>
-// //       `,
-// //     });
+  const sendEmail = async ({
+    name,
+    phoneNumber,
+    email,
+    message,
+  }: SendEmailProps) => {
+    setIsSending(true);
+    setError(null);
+    try {
+      await emailjs.send(
+        "service_zlzcp0h",
+        "template_wy3cmfl",
+        {
+          from_name: name,
+          to_name: "Go N Code",
+          from_email: email,
+          to_email: "",
+          message: message,
+        },
+        "njO-HNDAVecm5l-tZ"
+      );
 
-// //     console.log("Email sent successfully");
-// //   } catch (error) {
-// //     console.error("Failed to send email", error);
-// //   }
-// // };
+      toast({
+        title: "Message sent successfully.",
+        status: "success",
+        duration: 5000,
+        isClosable: true,
+      });
+      setIsSending(false);
+      return true; // Indicate success
+    } catch (error: any) {
+      console.error(error);
+      toast({
+        title: "Failed to send message.",
+        description: "Please try again later.",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
+      setError(error);
+      setIsSending(false);
+      return false;
+    }
+  };
 
-// // /api/sendEmail.js
-// import { Resend } from "resend";
-
-// export default async (req, res) => {
-//   if (req.method === "POST") {
-//     try {
-//       const resend = new Resend("your-resend-api-key");
-
-//       const { name, phoneNumber, emailAddress, message } = req.body;
-
-//       await resend.emails.send({
-//         from: "onboarding@resend.dev",
-//         to: "your-receiving-email@example.com",
-//         subject: `New Contact Us Message from ${name}`,
-//         html: `
-//           <p><strong>Name:</strong> ${name}</p>
-//           <p><strong>Phone Number:</strong> ${phoneNumber}</p>
-//           <p><strong>Email Address:</strong> ${emailAddress}</p>
-//           <p><strong>Message:</strong> ${message}</p>
-//         `,
-//       });
-
-//       res.status(200).json({ success: true });
-//     } catch (error) {
-//       console.error("Failed to send email", error);
-//       res.status(500).json({ success: false, error: error.message });
-//     }
-//   } else {
-//     // Handle any other HTTP methods
-//     res.setHeader("Allow", ["POST"]);
-//     res.status(405).end(`Method ${req.method} Not Allowed`);
-//   }
-// };
+  return { sendEmail, isSending, error };
+}

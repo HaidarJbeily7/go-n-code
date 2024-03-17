@@ -1,3 +1,4 @@
+"use client";
 import { Box, Flex, Text, Input, Button, Textarea } from "@chakra-ui/react";
 import AchievementCard from "./home-components/achievement-card";
 import HomeContactForm from "./home-components/contactus-form";
